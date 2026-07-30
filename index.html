@@ -187,6 +187,36 @@
     z-index:1;
   }
   .about-card p + p{ margin-top:16px; }
+  .about-layout{
+    display:grid;
+    grid-template-columns:320px 1fr;
+    align-items:stretch;
+    background:var(--card);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .about-photo img{
+    display:block;
+    width:100%;
+    height:100%;
+    min-height:320px;
+    object-fit:cover;
+  }
+  .about-layout .about-card{
+    margin:0;
+    background:transparent;
+    box-shadow:none;
+    border-radius:0;
+  }
+  @media (max-width:800px){
+    .about-layout{
+      grid-template-columns:1fr;
+    }
+    .about-photo img{
+      max-height:420px;
+    }
+  }
   .quote-mark{
     font-family:'Playfair Display', serif;
     font-size:4rem;
@@ -194,6 +224,24 @@
     line-height:0.5;
     display:block;
     margin-bottom:12px;
+  }
+
+  /* BRAND PHOTO */
+  .brand-photo-card{
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+  }
+  .brand-photo-card img{
+    display:block;
+    width:100%;
+    height:auto;
+  }
+  .brand-photo-caption{
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    margin-top:16px;
   }
 
   /* EXPERTISE GRID */
@@ -292,6 +340,13 @@
   }
 
   /* CONSULTING */
+  .pricing-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px, 1fr));
+    gap:28px;
+    max-width:920px;
+    margin:0 auto 40px;
+  }
   .pricing-card{
     max-width:520px;
     margin:0 auto 40px;
@@ -300,6 +355,10 @@
     box-shadow:var(--shadow);
     overflow:hidden;
     border-top:6px solid var(--orange);
+  }
+  .pricing-grid .pricing-card{
+    max-width:none;
+    margin:0;
   }
   .pricing-head{
     padding:36px 36px 0;
@@ -430,6 +489,7 @@
       <li><a href="#about">關於我</a></li>
       <li><a href="#expertise">專業領域</a></li>
       <li><a href="#philosophy">理念</a></li>
+      <li><a href="#brands">產業實績</a></li>
       <li><a href="#consulting">個人諮詢</a></li>
       <li><a href="#guestbook">留言板</a></li>
       <li><a href="#contact">聯絡</a></li>
@@ -452,10 +512,16 @@
 <section id="about" class="container">
   <h2 class="section-title">關於我</h2>
   <p class="section-desc">從企業現場走到講台，累積實戰經驗與教學熱情</p>
-  <div class="about-card">
-    <span class="quote-mark">"</span>
-    <p>我是王東明，長期投入企業輔導與口語表達訓練，協助團隊與個人在溝通、簡報與領導表達上找到自己的聲音。</p>
-    <p>我相信真正的成長來自於願意跳出舒適圈——所以我喜歡挑戰，也樂於陪伴學員一起面對挑戰、突破自己。</p>
+  <div class="about-layout">
+    <div class="about-photo">
+      <img src="images/portrait.jpg" alt="王東明老師">
+    </div>
+    <div class="about-card">
+      <span class="quote-mark">"</span>
+      <p>我是王東明，協助企業與個人「精準表達、創造價值」的教練。</p>
+      <p>我擁有獨特的跨界背景，從廣告公司的創意總監到專業攝影師，讓我能精準捕捉商業核心，將複雜資訊轉化為具感染力的表達語言。</p>
+      <p>擁有豐富的跨產業輔導經驗，從高階管理到新生代人才，我擅長跨越年齡與產業隔閡，協助您在溝通、簡報與領導中找到最強的聲音。我不只是講師，更是陪您跳出舒適圈、面對挑戰的戰略夥伴。讓我們一起將潛力，具象化為影響力與業績。</p>
+    </div>
   </div>
 </section>
 
@@ -488,12 +554,21 @@
   </div>
 </section>
 
+<section id="brands" class="container">
+  <h2 class="section-title">深受多元產業肯定</h2>
+  <p class="section-desc">從精品美妝、汽車航空到金融流通，跨產業品牌都在尋找突破舊有框架的表達與輔導夥伴</p>
+  <div class="brand-photo-card">
+    <img src="images/brand-stage.jpg" alt="王東明老師與多元產業品牌合作現場">
+  </div>
+  <p class="brand-photo-caption">與精品、汽車、航空、金融等產業品牌交流的現場紀錄</p>
+</section>
+
 <section id="contact" class="container">
   <h2 class="section-title">聯絡我</h2>
   <p class="section-desc">歡迎與我聯繫，一起討論企業輔導或口語表達的合作機會</p>
   <div class="contact-card">
     <p style="color:var(--ink-soft);">若您對企業內訓、顧問輔導或口語表達課程有興趣，歡迎隨時與我聯繫。</p>
-    <a class="contact-btn" href="mailto:hello@example.com">與我聯絡</a>
+    <a class="contact-btn" href="mailto:twoheart520@gmail.com">與我聯絡</a>
   </div>
 </section>
 
@@ -501,19 +576,35 @@
   <h2 class="section-title">個人顧問諮詢</h2>
   <p class="section-desc">想針對您個人的溝通、表達或經營課題深入討論？提供 1 對 1 線上諮詢</p>
 
-  <div class="pricing-card">
-    <div class="pricing-head">
-      <span class="placeholder-tag">範例方案，實際內容以確認為準</span>
-      <h3>1 對 1 顧問諮詢</h3>
-      <div class="pricing-price">NT$ [請填入價格]<br><small>／60 分鐘・線上進行</small></div>
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="pricing-head">
+        <h3>1 對 1 顧問諮詢</h3>
+        <div class="pricing-price">NT$ 30,000<br><small>／3 小時・實體見面</small></div>
+      </div>
+      <ul class="pricing-list">
+        <li>會前提供簡短需求表，讓諮詢更聚焦</li>
+        <li>針對企業輔導、溝通表達或個人職涯議題深入討論</li>
+        <li>會後提供重點摘要與具體建議</li>
+      </ul>
+      <div class="pricing-cta">
+        <a class="contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ58cy_EXZ4riQapGSiPMQNbu-lxikNU53BdlhgHeAukHQ5w/viewform" target="_blank" rel="noopener">填寫諮詢需求表</a>
+      </div>
     </div>
-    <ul class="pricing-list">
-      <li>會前提供簡短需求表，讓諮詢更聚焦</li>
-      <li>針對企業輔導、溝通表達或個人職涯議題深入討論</li>
-      <li>會後提供重點摘要與具體建議</li>
-    </ul>
-    <div class="pricing-cta">
-      <a class="contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ58cy_EXZ4riQapGSiPMQNbu-lxikNU53BdlhgHeAukHQ5w/viewform" target="_blank" rel="noopener">填寫諮詢需求表</a>
+
+    <div class="pricing-card">
+      <div class="pricing-head">
+        <h3>1 對 1 顧問諮詢</h3>
+        <div class="pricing-price">NT$ 20,000<br><small>／3 小時・線上進行</small></div>
+      </div>
+      <ul class="pricing-list">
+        <li>會前提供簡短需求表，讓諮詢更聚焦</li>
+        <li>針對企業輔導、溝通表達或個人職涯議題深入討論</li>
+        <li>會後提供重點摘要與具體建議</li>
+      </ul>
+      <div class="pricing-cta">
+        <a class="contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ58cy_EXZ4riQapGSiPMQNbu-lxikNU53BdlhgHeAukHQ5w/viewform" target="_blank" rel="noopener">填寫諮詢需求表</a>
+      </div>
     </div>
   </div>
 
@@ -541,8 +632,8 @@
   </div>
 
   <div class="payment-note">
-    <strong>匯款資訊</strong>（<span class="edit-flag">待補充，請填入實際帳戶資訊</span>）<br>
-    銀行代碼：[請填入]　帳號：[請填入]　戶名：[請填入]<br>
+    <strong>匯款資訊</strong><br>
+    銀行代碼：812（台新銀行 新莊分行）　帳號：20051000096030　戶名：王東明<br>
     匯款後請於表單備註或另行通知，以利核對與確認預約。
   </div>
 </section>
