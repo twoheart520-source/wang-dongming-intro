@@ -391,6 +391,34 @@
     color:var(--deep);
     font-weight:700;
   }
+
+  /* AI SUMMARY */
+  .ai-summary-wrap{
+    max-width:520px;
+    margin:0 auto 32px;
+    text-align:center;
+  }
+  .ai-summary-btn{
+    background:linear-gradient(90deg, var(--coral), var(--orange));
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:0.95rem;
+  }
+  .ai-summary-btn:disabled{
+    opacity:0.7;
+    cursor:default;
+  }
+  .ai-summary-result{
+    margin-top:18px;
+    padding:18px 24px;
+    background:var(--card);
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    color:var(--ink);
+    font-weight:500;
+    line-height:1.7;
+  }
 </style>
 </head>
 <body>
@@ -522,6 +550,12 @@
 <section id="guestbook" class="container">
   <h2 class="section-title">留言板</h2>
   <p class="section-desc">歡迎留下您的想法、鼓勵或合作邀約</p>
+
+  <div class="ai-summary-wrap">
+    <button id="ai-summary-btn" class="contact-btn ai-summary-btn" type="button">✨ AI 一句話總結</button>
+    <div id="ai-summary-result" class="ai-summary-result" hidden></div>
+  </div>
+
   <div class="about-card">
     <script src="https://giscus.app/client.js"
             data-repo="twoheart520-source/wang-dongming-intro"
@@ -540,6 +574,39 @@
     </script>
   </div>
 </section>
+
+<script>
+(function () {
+  var API_URL = 'https://wang-dongming-intro-api.zeabur.app/api/summarize';
+  var btn = document.getElementById('ai-summary-btn');
+  var result = document.getElementById('ai-summary-result');
+
+  btn.addEventListener('click', function () {
+    btn.disabled = true;
+    var originalText = btn.textContent;
+    btn.textContent = '思考中…';
+    result.hidden = false;
+    result.textContent = '';
+
+    fetch(API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({}),
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        result.textContent = data.summary || data.error || '目前無法產生摘要，請稍後再試。';
+      })
+      .catch(function () {
+        result.textContent = '連線失敗，請稍後再試。';
+      })
+      .finally(function () {
+        btn.disabled = false;
+        btn.textContent = originalText;
+      });
+  });
+})();
+</script>
 
 <footer>
   © 2026 王東明 老師．企業輔導顧問 · 口語表達專家
