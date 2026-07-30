@@ -290,6 +290,107 @@
     .about-card, .contact-card{ padding:32px 24px; }
     .banner{ padding:40px 24px; }
   }
+
+  /* CONSULTING */
+  .pricing-card{
+    max-width:520px;
+    margin:0 auto 40px;
+    background:var(--card);
+    border-radius:28px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    border-top:6px solid var(--orange);
+  }
+  .pricing-head{
+    padding:36px 36px 0;
+    text-align:center;
+  }
+  .pricing-head .placeholder-tag{
+    display:inline-block;
+    margin-bottom:14px;
+    padding:5px 14px;
+    border-radius:999px;
+    background:rgba(255,107,53,0.12);
+    color:var(--deep);
+    font-size:0.78rem;
+    font-weight:700;
+  }
+  .pricing-head h3{
+    font-size:1.4rem;
+    color:var(--ink);
+    margin-bottom:10px;
+  }
+  .pricing-price{
+    font-family:'Playfair Display', serif;
+    font-size:2.6rem;
+    font-weight:900;
+    color:var(--deep);
+  }
+  .pricing-price small{
+    font-size:1rem;
+    font-weight:500;
+    color:var(--ink-soft);
+    font-family:'Noto Sans TC', sans-serif;
+  }
+  .pricing-list{
+    list-style:none;
+    padding:24px 36px 0;
+    color:var(--ink-soft);
+    font-size:0.95rem;
+  }
+  .pricing-list li{
+    padding:8px 0;
+    border-bottom:1px dashed rgba(109,76,65,0.15);
+  }
+  .pricing-list li:last-child{ border-bottom:none; }
+  .pricing-cta{
+    padding:28px 36px 36px;
+    text-align:center;
+  }
+  .steps{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(180px, 1fr));
+    gap:24px;
+    margin-bottom:40px;
+  }
+  .step{
+    text-align:center;
+    padding:16px;
+  }
+  .step-num{
+    width:40px; height:40px;
+    line-height:40px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--orange), var(--amber));
+    color:#fff;
+    font-weight:700;
+    margin:0 auto 14px;
+  }
+  .step h4{
+    font-size:1rem;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+  .step p{
+    font-size:0.85rem;
+    color:var(--ink-soft);
+  }
+  .payment-note{
+    max-width:520px;
+    margin:0 auto;
+    background:var(--cream-2);
+    border:1px dashed var(--coral);
+    border-radius:20px;
+    padding:24px 28px;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+    line-height:1.9;
+  }
+  .payment-note strong{ color:var(--ink); }
+  .payment-note .edit-flag{
+    color:var(--deep);
+    font-weight:700;
+  }
 </style>
 </head>
 <body>
@@ -301,6 +402,7 @@
       <li><a href="#about">關於我</a></li>
       <li><a href="#expertise">專業領域</a></li>
       <li><a href="#philosophy">理念</a></li>
+      <li><a href="#consulting">個人諮詢</a></li>
       <li><a href="#guestbook">留言板</a></li>
       <li><a href="#contact">聯絡</a></li>
     </ul>
@@ -364,6 +466,56 @@
   <div class="contact-card">
     <p style="color:var(--ink-soft);">若您對企業內訓、顧問輔導或口語表達課程有興趣，歡迎隨時與我聯繫。</p>
     <a class="contact-btn" href="mailto:hello@example.com">與我聯絡</a>
+  </div>
+</section>
+
+<section id="consulting" class="container">
+  <h2 class="section-title">個人顧問諮詢</h2>
+  <p class="section-desc">想針對您個人的溝通、表達或經營課題深入討論？提供 1 對 1 線上諮詢</p>
+
+  <div class="pricing-card">
+    <div class="pricing-head">
+      <span class="placeholder-tag">範例方案，實際內容以確認為準</span>
+      <h3>1 對 1 顧問諮詢</h3>
+      <div class="pricing-price">NT$ [請填入價格]<br><small>／60 分鐘・線上進行</small></div>
+    </div>
+    <ul class="pricing-list">
+      <li>會前提供簡短需求表，讓諮詢更聚焦</li>
+      <li>針對企業輔導、溝通表達或個人職涯議題深入討論</li>
+      <li>會後提供重點摘要與具體建議</li>
+    </ul>
+    <div class="pricing-cta">
+      <a class="contact-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSdZ58cy_EXZ4riQapGSiPMQNbu-lxikNU53BdlhgHeAukHQ5w/viewform" target="_blank" rel="noopener">填寫諮詢需求表</a>
+    </div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>填寫需求表單</h4>
+      <p>簡述您想諮詢的問題與背景</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>確認並回覆</h4>
+      <p>3 個工作天內回覆確認與匯款資訊</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>完成匯款</h4>
+      <p>匯款完成即完成預約</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>安排諮詢</h4>
+      <p>與您約定時間，進行 1 對 1 諮詢</p>
+    </div>
+  </div>
+
+  <div class="payment-note">
+    <strong>匯款資訊</strong>（<span class="edit-flag">待補充，請填入實際帳戶資訊</span>）<br>
+    銀行代碼：[請填入]　帳號：[請填入]　戶名：[請填入]<br>
+    匯款後請於表單備註或另行通知，以利核對與確認預約。
   </div>
 </section>
 
