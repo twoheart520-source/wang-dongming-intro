@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>王東明老師 | 企業輔導顧問・口語表達專家</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#FFF8F0;
+    --cream-2:#FFF1E0;
+    --ink:#3E2723;
+    --ink-soft:#6D4C41;
+    --orange:#FF6B35;
+    --amber:#F7B733;
+    --coral:#FF8C69;
+    --deep:#C1440E;
+    --card:#FFFFFF;
+    --shadow: 0 20px 50px rgba(193,68,14,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans TC', sans-serif;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(255,140,105,0.18), transparent 40%),
+      radial-gradient(circle at 90% 20%, rgba(247,183,51,0.20), transparent 45%),
+      var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    overflow-x:hidden;
+  }
+  .container{
+    max-width:1080px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* NAV */
+  nav{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(255,248,240,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(193,68,14,0.08);
+  }
+  nav .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 24px;
+  }
+  .logo{
+    font-family:'Playfair Display', serif;
+    font-weight:900;
+    font-size:1.3rem;
+    color:var(--deep);
+    letter-spacing:1px;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+  }
+  .nav-links a{
+    text-decoration:none;
+    color:var(--ink-soft);
+    font-weight:500;
+    font-size:0.95rem;
+    transition:color .25s;
+  }
+  .nav-links a:hover{ color:var(--orange); }
+
+  /* HERO */
+  .hero{
+    padding:96px 0 80px;
+    text-align:center;
+    position:relative;
+  }
+  .avatar{
+    width:150px;
+    height:150px;
+    margin:0 auto 32px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--orange), var(--amber));
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Playfair Display', serif;
+    font-size:3.2rem;
+    font-weight:900;
+    color:#fff;
+    box-shadow:0 18px 40px rgba(255,107,53,0.35);
+    border:6px solid var(--card);
+  }
+  .eyebrow{
+    display:inline-block;
+    padding:6px 18px;
+    border-radius:999px;
+    background:rgba(255,107,53,0.1);
+    color:var(--deep);
+    font-weight:700;
+    font-size:0.85rem;
+    letter-spacing:2px;
+    margin-bottom:20px;
+  }
+  h1{
+    font-family:'Playfair Display', serif;
+    font-size:clamp(2.4rem, 6vw, 4rem);
+    font-weight:900;
+    color:var(--ink);
+    line-height:1.15;
+    margin-bottom:16px;
+  }
+  h1 span{
+    background:linear-gradient(90deg, var(--orange), var(--deep));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .subtitle{
+    font-size:1.25rem;
+    color:var(--ink-soft);
+    font-weight:500;
+    max-width:600px;
+    margin:0 auto 36px;
+  }
+  .tags{
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .tag{
+    padding:10px 22px;
+    border-radius:999px;
+    background:var(--card);
+    box-shadow:var(--shadow);
+    font-weight:700;
+    font-size:0.9rem;
+    color:var(--deep);
+    border:1px solid rgba(255,140,105,0.25);
+  }
+
+  /* SECTIONS */
+  section{ padding:70px 0; }
+  .section-title{
+    font-family:'Playfair Display', serif;
+    font-size:2.2rem;
+    font-weight:900;
+    text-align:center;
+    margin-bottom:12px;
+    color:var(--ink);
+  }
+  .section-desc{
+    text-align:center;
+    color:var(--ink-soft);
+    max-width:560px;
+    margin:0 auto 48px;
+  }
+
+  /* ABOUT */
+  .about-card{
+    background:var(--card);
+    border-radius:28px;
+    padding:48px;
+    box-shadow:var(--shadow);
+    position:relative;
+    overflow:hidden;
+  }
+  .about-card::before{
+    content:"";
+    position:absolute;
+    top:-60px; right:-60px;
+    width:200px; height:200px;
+    background:linear-gradient(135deg, var(--amber), var(--coral));
+    border-radius:50%;
+    opacity:0.15;
+  }
+  .about-card p{
+    font-size:1.08rem;
+    color:var(--ink-soft);
+    position:relative;
+    z-index:1;
+  }
+  .about-card p + p{ margin-top:16px; }
+  .quote-mark{
+    font-family:'Playfair Display', serif;
+    font-size:4rem;
+    color:var(--coral);
+    line-height:0.5;
+    display:block;
+    margin-bottom:12px;
+  }
+
+  /* EXPERTISE GRID */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:28px;
+  }
+  .card{
+    background:var(--card);
+    border-radius:22px;
+    padding:34px 28px;
+    box-shadow:var(--shadow);
+    transition:transform .3s, box-shadow .3s;
+    border-top:4px solid var(--orange);
+  }
+  .card:nth-child(2){ border-top-color:var(--amber); }
+  .card:nth-child(3){ border-top-color:var(--coral); }
+  .card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 26px 55px rgba(193,68,14,0.18);
+  }
+  .card .icon{
+    width:56px;height:56px;
+    border-radius:16px;
+    display:flex;align-items:center;justify-content:center;
+    font-size:1.6rem;
+    margin-bottom:20px;
+    background:linear-gradient(135deg, var(--amber), var(--orange));
+    color:#fff;
+  }
+  .card h3{
+    font-size:1.15rem;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+  .card p{
+    color:var(--ink-soft);
+    font-size:0.96rem;
+  }
+
+  /* PHILOSOPHY / CHALLENGE BANNER */
+  .banner{
+    background:linear-gradient(120deg, var(--orange), var(--deep));
+    border-radius:28px;
+    padding:56px 40px;
+    text-align:center;
+    color:#fff;
+    box-shadow:0 25px 60px rgba(193,68,14,0.3);
+  }
+  .banner h2{
+    font-family:'Playfair Display', serif;
+    font-size:1.9rem;
+    margin-bottom:14px;
+  }
+  .banner p{
+    font-size:1.05rem;
+    opacity:0.92;
+    max-width:600px;
+    margin:0 auto;
+  }
+
+  /* CONTACT */
+  .contact-card{
+    background:var(--card);
+    border-radius:28px;
+    padding:48px;
+    text-align:center;
+    box-shadow:var(--shadow);
+  }
+  .contact-btn{
+    display:inline-block;
+    margin-top:24px;
+    padding:14px 36px;
+    border-radius:999px;
+    background:linear-gradient(90deg, var(--orange), var(--deep));
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    box-shadow:0 15px 35px rgba(255,107,53,0.35);
+    transition:transform .25s;
+  }
+  .contact-btn:hover{ transform:translateY(-3px); }
+
+  footer{
+    text-align:center;
+    padding:36px 24px 48px;
+    color:var(--ink-soft);
+    font-size:0.85rem;
+  }
+
+  @media (max-width:640px){
+    .nav-links{ display:none; }
+    .about-card, .contact-card{ padding:32px 24px; }
+    .banner{ padding:40px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo">王東明</div>
+    <ul class="nav-links">
+      <li><a href="#about">關於我</a></li>
+      <li><a href="#expertise">專業領域</a></li>
+      <li><a href="#philosophy">理念</a></li>
+      <li><a href="#contact">聯絡</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero container">
+  <div class="avatar">王</div>
+  <span class="eyebrow">SPEAK · GROW · CHALLENGE</span>
+  <h1>王東明 老師<br><span>企業輔導顧問 · 口語表達專家</span></h1>
+  <p class="subtitle">用清晰的語言，陪伴企業與個人找到更好的表達方式。</p>
+  <div class="tags">
+    <span class="tag">🏢 企業輔導顧問</span>
+    <span class="tag">🎤 口語表達專家</span>
+    <span class="tag">🔥 熱愛挑戰</span>
+  </div>
+</header>
+
+<section id="about" class="container">
+  <h2 class="section-title">關於我</h2>
+  <p class="section-desc">從企業現場走到講台，累積實戰經驗與教學熱情</p>
+  <div class="about-card">
+    <span class="quote-mark">"</span>
+    <p>我是王東明，長期投入企業輔導與口語表達訓練，協助團隊與個人在溝通、簡報與領導表達上找到自己的聲音。</p>
+    <p>我相信真正的成長來自於願意跳出舒適圈——所以我喜歡挑戰，也樂於陪伴學員一起面對挑戰、突破自己。</p>
+  </div>
+</section>
+
+<section id="expertise" class="container">
+  <h2 class="section-title">專業領域</h2>
+  <p class="section-desc">結合企業實務與表達訓練，提供貼近真實情境的輔導</p>
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🏢</div>
+      <h3>企業輔導顧問</h3>
+      <p>深入企業經營現場，協助團隊釐清問題、優化流程，提升整體績效與溝通效率。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🎤</div>
+      <h3>口語表達專家</h3>
+      <p>專精簡報技巧、公眾演說與職場溝通訓練，幫助學員自信、清晰地表達想法。</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔥</div>
+      <h3>挑戰精神</h3>
+      <p>樂於嘗試新方法、迎接未知課題，將每一次挑戰視為成長與突破的契機。</p>
+    </div>
+  </div>
+</section>
+
+<section id="philosophy" class="container">
+  <div class="banner">
+    <h2>敢於挑戰，才能持續成長</h2>
+    <p>我始終相信，最好的學習來自於實際的挑戰與行動。無論是企業輔導或口語表達訓練，我都希望能陪伴每一位夥伴，勇敢跨出那一步。</p>
+  </div>
+</section>
+
+<section id="contact" class="container">
+  <h2 class="section-title">聯絡我</h2>
+  <p class="section-desc">歡迎與我聯繫，一起討論企業輔導或口語表達的合作機會</p>
+  <div class="contact-card">
+    <p style="color:var(--ink-soft);">若您對企業內訓、顧問輔導或口語表達課程有興趣，歡迎隨時與我聯繫。</p>
+    <a class="contact-btn" href="mailto:hello@example.com">與我聯絡</a>
+  </div>
+</section>
+
+<footer>
+  © 2026 王東明 老師．企業輔導顧問 · 口語表達專家
+</footer>
+
+</body>
+</html>
